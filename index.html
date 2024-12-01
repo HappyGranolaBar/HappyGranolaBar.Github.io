@@ -17,10 +17,16 @@
             color: #e0e0e0; 
         }
         header { 
-            background-color: #097a4b; 
-            text-align: center; 
-            padding: 10px 0; 
+            
         }
+
+	svg{
+		background-color: #1e1e1e
+		color: #097a4b; 
+		font-size: 10px;
+		text-color: #097a4b;
+		
+	}
         .logo {
             display: flex;
             justify-content: center;
@@ -82,6 +88,12 @@
             font-size: 16px;
         }
         .blurred { filter: blur(4px); }
+	.test {
+        	 position: relative; 
+      		 top: 30%;
+		 left: 50%;	
+		 width: 40%	
+	}
     </style>
 </head>
 
@@ -94,10 +106,19 @@
         </div>
     </div>
 
-    <header>
-        <h1> Happy Granola Bar </h1>
-    </header>
-    
+   <div class="test">
+	This is a test
+   </div>
+
+    <svg viewBox="-12.5 -20 100 100" Fill="#00000000">
+       <path id="curve" d="M0,0c12,-15,66,-15,79,0" />
+       		<text width="500">
+   			 <textPath alignment-baseline="top" xlink:href="#curve" Fill="#097a4b">
+     				 Happy Granola Bar
+  			  </textPath>
+ 		 </text>
+    </svg>
+
        <script>
         function closeModal() {
             var modal = document.getElementById('myModal');
