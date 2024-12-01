@@ -16,43 +16,10 @@
             background-color: #121212; 
             color: #e0e0e0; 
         }
-        header { 
-            
-        }
-
-	svg{
-		background-color: #1e1e1e
-		color: #097a4b; 
-		font-size: 10px;
-		text-color: #097a4b;
-		
+	.BaseSVG{
+        	position: relative; 
+		left 50%;		
 	}
-        .logo {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0; /* Space above and below the logo */
-        }
-        .logo img {
-            width: 500px; /* Set your desired width */
-            height: auto; /* Maintain aspect ratio */
-        }
-        nav { 
-            text-align: center; 
-            margin-top: 50px; /* Increased to make space for the logo */
-        }
-        nav a {
-            padding: 10px 20px; 
-            margin: 0 10px;
-            text-decoration: none; 
-            color: #e0e0e0; 
-            background-color: #333333; 
-            border-radius: 5px; 
-            font-size: 16px;
-            transition: background-color 0.3s; 
-        }
-        nav a:hover { 
-            background-color: #555555; 
-        }
         footer { 
             background-color: #1e1e1e; 
             text-align: right; 
@@ -66,7 +33,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.7);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -89,53 +56,62 @@
         }
         .blurred { filter: blur(4px); }
 	.test {
-        	 position: relative; 
-      		 top: 30%;
-		 left: 50%;	
-		 width: 40%	
+		
+        	position: relative; 
+      		top: 9%;
+		left: 50%;
+		z-index: -1;		
 	}
     </style>
+
 </head>
 
+
 <body>
-    
-    <div id="myModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <p>This sight is a work in progress.</p>
-            <button onclick="closeModal()">Acknowledge</button>
-        </div>
-    </div>
 
-   <div class="test">
-	This is a test
-   </div>
+	<div id="myModal" class="modal" style="display: none;">
+            <div class="modal-content">
+        	<p>This sight is a work in progress.</p>
+        	<button onclick="closeModal()">Acknowledge</button>
+            </div>
+	</div>
 
-    <svg viewBox="-12.5 -20 100 100" Fill="#00000000">
-       <path id="curve" d="M0,0c12,-15,66,-15,79,0" />
-       		<text width="500">
-   			 <textPath alignment-baseline="top" xlink:href="#curve" Fill="#097a4b">
-     				 Happy Granola Bar
-  			  </textPath>
- 		 </text>
-    </svg>
+	<script>
 
-       <script>
-        function closeModal() {
-            var modal = document.getElementById('myModal');
-            modal.style.display = 'none';
-            document.querySelector('header').classList.remove('blurred');
-            document.querySelector('nav').classList.remove('blurred');
-            document.querySelector('footer').classList.remove('blurred');
-        }
+        	function closeModal() {
+          		var modal = document.getElementById('myModal');
+           		modal.style.display = 'none';
+           		document.querySelector('header').classList.remove('blurred');
+           		document.querySelector('nav').classList.remove('blurred');
+           		document.querySelector('footer').classList.remove('blurred');
+       		}
 
-        window.onload = function() {
-            var modal = document.getElementById('myModal');
-            modal.style.display = 'flex';
-            document.querySelector('header').classList.add('blurred');
-            document.querySelector('nav').classList.add('blurred');
-            document.querySelector('footer').classList.add('blurred');
-        }
-    </script>
+        	window.onload = function() {
+            		var modal = document.getElementById('myModal');
+            		modal.style.display = 'flex';
+            		document.querySelector('header').classList.add('blurred');
+            		document.querySelector('nav').classList.add('blurred');
+            		document.querySelector('footer').classList.add('blurred');
+        	}
+
+	</script>
+
+	<svg viewBox="57 -20 100 100">
+		<radialGradient id="img1">
+			<stop offset="0%" stop-color="#6eba61" />
+			<stop offset="100%" stop-color="#2c6e21" />
+		</radialGradient>
+		<g>
+			<path d="M-95 -75c0 150 400 150 400 0" fill="url(#img1)"/>
+		</g>
+		<path id="curve" d="M65,0c12,-15,66,-15,80,0" fill="#00000000"/>
+		<text width="500" font-size="10px">
+			<textPath alignment-baseline="top" xlink:href="#curve" Fill="#ffffff">
+				Happy Granola Bar
+			</textPath>
+		</text>
+	</svg>
+
 </body>
 
 <footer>
